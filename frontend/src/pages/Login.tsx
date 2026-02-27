@@ -30,7 +30,7 @@ export default function Login() {
       }
 
       const user = await response.json();
-      localStorage.setItem("userId", user.id);
+      localStorage.setItem("userId", String(user.userId));
       navigate("/dashboard");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Failed to authenticate. Please try again.");
